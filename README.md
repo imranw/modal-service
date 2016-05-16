@@ -61,7 +61,10 @@ angular.module('myApp')
 });
 ```
 
+`closeModal(result)` It's added by the service and allow you to close modal and return a result if you want.
+
 #Your modal template
+Modal's scope is a child of Controller's scope, so you can use `closeModal()` directly in your HTML
 
 ```html
 <div class="modal">
