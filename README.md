@@ -30,7 +30,7 @@ angular.module('myApp')
 .controller('ExampleCtrl', function($scope, $modalService){
 
     //Open modal and attend resutl
-    $modalService.show('modals/example-modal.html', 'ClubSelectionCtrl', {name: 'Valerio Barbera', city: 'Naples'})
+    $modalService.show('modals/example-modal.html', 'ClubSelectionCtrl', {first_name: 'Valerio', city: 'Naples'})
         .then(function(result){
             if(!result)
                 alert('Club is not selected');
@@ -47,7 +47,7 @@ angular.module('myApp')
     //This is the JSON input parameter forwarded into $modalService.show(...)
     console.log(parameters);
     
-    $scope.name = parameters.name;
+    $scope.user = parameters;
     
     $scope.clubs = [
         { id: 1, name: "Real Madrid"},
@@ -71,6 +71,9 @@ angular.module('myApp')
     </ion-header-bar>
     
     <ion-content padding="true">
+    
+        <h1>{{user.first_name}}</h1>
+    
         <ion-list>
             <ion-item ng-repeat="club in clubs" ng-click="selectClub(club)">
                 {{club.name}}
