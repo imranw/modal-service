@@ -22,7 +22,7 @@ angular.module('myApp', ['modalService']);
 
 #Use service
 You can assign an indipendent controller to the modal, a specific html view and an input param.
-In controller is possible to obtain the parameters injecting `parameters` and close modal passing the result in `closeModal(result)` method.
+In controller it's possible to obtain the parameters injecting `parameters` service and close modal passing the result in `closeModal(result)` method.
 
 ```javascript
 angular.module('myApp')
